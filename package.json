@@ -9,11 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@nextui-org/button": "^2.0.26",
+    "@nextui-org/react": "^2.2.9",
+    "@nextui-org/system": "^2.0.15",
+    "@nextui-org/theme": "^2.1.17",
+    "framer-motion": "^10.18.0",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@babel/plugin-transform-typescript": "7.19.3",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -22,7 +28,11 @@
     "eslint-config-next": "14.0.4",
     "postcss": "^8",
     "prettier": "^2.5.1",
+    "sass": "^1.69.7",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
+  },
+  "resolutions": {
+    "@babel/plugin-transform-typescript": "7.19.3"
   }
 }
