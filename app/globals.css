@@ -2,17 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+$black: #000;
+$white: #fff;
+$dark-blue: #272643;
+$lightblue: ##bae8e8;
+$light-blue: #e3f6f5;
+$medium-blue: #2c698d;
+
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: $black;
+  --background-start-rgb: #$white;
+  --background-end-rgb: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: $white;
+    --background-start-rgb: $black;
+    --background-end-rgb: $blackk;
+  }
+}
+
+@layer base {
+  h1 {
+    @apply px-2;
+    @apply py-2;
+    @apply text-[$dark-blue];
   }
 }
 

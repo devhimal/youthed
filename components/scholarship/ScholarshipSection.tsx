@@ -1,18 +1,23 @@
 import React from "react"
-import styles from "./scholarship.module.scss"
-import { Typography } from "@/components/atoms/Typography/Typography"
-import Scholarship from "@/components/atoms/Cards/Scholarship"
+import { Typography } from "../atoms/Typography/Typography"
+import Scholarship from "../atoms/Cards/Scholarship"
 import { Button } from "@nextui-org/button"
+import Link from "next/link"
 import client from "@/lib/pockethost"
 
-const page = async () => {
+const ScholarshipSection = async () => {
   const scholarships = await client.collection("Scholarships").getList(1, 6, {
     sort: "-created",
     requestKey: `${Math.random() * 1000000}`,
   })
   return (
-    <div className="mx-10 py-4 min-h-screen">
-      <Typography.H2> Discover scholarship opportunities</Typography.H2>
+    <div className="sCardContainer">
+      <div className="flex justify-between items-center">
+        <Typography.H1>Explore Scholarships</Typography.H1>
+        <Button color="primary" variant="ghost">
+          <Link href={"/scholarships"}>Find more</Link>
+        </Button>
+      </div>
       <div className="grid m:grid-cols-2 md:grid-cols-3 gap-4 py-4 pl-4">
         {scholarships.items.map((items, index) => {
           return (
@@ -29,13 +34,8 @@ const page = async () => {
           )
         })}
       </div>
-      <div className="flex justify-center items-center py-8">
-        <Button color="primary" variant="solid">
-          Show more
-        </Button>
-      </div>
     </div>
   )
 }
 
-export default page
+export default ScholarshipSection

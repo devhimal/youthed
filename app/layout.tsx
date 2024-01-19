@@ -2,10 +2,10 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
-import { NextUIProvider } from "@nextui-org/system"
-// import { NextUIProvider } from "@nextui-org/react"
 import Provider from "./Provider"
 import Footer from "@/components/Footer/Footer"
+import Navbar from "@/components/Navbar/Navbar"
+import { ClerkProvider } from "@clerk/nextjs"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -20,13 +20,18 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <Provider>
-        <div className={inter.className}>
-          {children}
-          <Footer />
-        </div>
-      </Provider>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body>
+          <Provider>
+            <div className={`${inter.className}`}>
+              <Navbar />
+              {children}
+              <Footer />
+            </div>
+          </Provider>
+        </body>
+      </html>
+    </ClerkProvider>
   )
 }

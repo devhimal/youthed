@@ -1,0 +1,31 @@
+.h1 {
+  font-weight: 600;
+  font-size: clamp(1rem, 10vw, 2rem);
+}
+.h2 {
+  font-weight: 600;
+  font-size: 24px;
+}
+.h3 {
+  font-weight: 600;
+  font-size: 20px;
+}
+.h4 {
+  font-weight: 400;
+  font-size: 16px;
+}
+@media screen and (max-width: 800px) {
+  .h1 {
+    font-size: 24;
+  }
+  .h2 {
+    font-size: 20px;
+  }
+  .h3 {
+    font-size: 16px;
+    margin-top: 14px;
+  }
+  .h4 {
+    font-size: 14px;
+  }
+}
